@@ -1,8 +1,10 @@
+// studio/schemas/financement.js
+
 export default {
-  name: 'partenaire',
-  title: 'Partenaire Académique',
+  name: 'financement',
+  title: 'Type de Financement',
   type: 'document',
   fields: [
-    { name: 'title', title: 'Titre', type: 'string' }
+    { name: 'title', title: 'Titre', type: 'string' } // Ex: "CPF", "Alternance"...
   ]
 }
