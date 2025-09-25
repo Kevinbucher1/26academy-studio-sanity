@@ -87,13 +87,13 @@ export default {
       group: 'content'
     },
     {
-      name: 'financements',
-      title: 'Financements Possibles',
-      description: 'Sélectionnez un ou plusieurs types de financements.',
-      type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'financement' }] }],
-      group: 'content'
-    },
+  name: 'financementsFiltres', // <-- Nouveau nom, unique !
+  title: 'Financements (pour les filtres du catalogue)',
+  description: 'Sélectionnez les financements associés à ce parcours pour le catalogue.',
+  type: 'array',
+  of: [{ type: 'reference', to: [{ type: 'financement' }] }],
+  group: 'content'
+},
 
     // --- Section HERO ---
     {
