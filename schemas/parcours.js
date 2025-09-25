@@ -42,6 +42,58 @@ export default {
       description: "Ceci est la fin de l'URL. Cliquez sur 'Generate' pour le créer automatiquement à partir du titre, ou écrivez le vôtre.",
       validation: Rule => Rule.required().error("L'URL est obligatoire."),
     },
+    {
+      name: 'eligibleCPF',
+      title: 'Éligible au CPF ?',
+      type: 'boolean',
+      initialValue: true,
+      group: 'content'
+    },
+    {
+      name: 'typeFormation',
+      title: 'Type de formation',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Formation Longue', value: 'Longue' },
+          { title: 'Formation Courte', value: 'Courte' }
+        ],
+        layout: 'radio'
+      },
+      group: 'content'
+    },
+    {
+      name: 'duree',
+      title: 'Durée de la formation',
+      type: 'object',
+      group: 'content',
+      fields: [
+        { name: 'heures', title: 'Heures', type: 'number' },
+        { name: 'mois', title: 'Mois', type: 'number' }
+      ]
+    },
+    {
+      name: 'certification',
+      title: 'Type de Certification',
+      type: 'reference',
+      to: [{ type: 'certification' }],
+      group: 'content'
+    },
+    {
+      name: 'partenaire',
+      title: 'Partenaire Académique',
+      type: 'reference',
+      to: [{ type: 'partenaire' }],
+      group: 'content'
+    },
+    {
+      name: 'financements',
+      title: 'Financements Possibles',
+      description: 'Sélectionnez un ou plusieurs types de financements.',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'financement' }] }],
+      group: 'content'
+    },
 
     // --- Section HERO ---
     {
