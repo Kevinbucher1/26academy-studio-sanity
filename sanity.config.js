@@ -2,6 +2,7 @@
 
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
+import {myStructure} from './deskStructure'
 import {schemaTypes} from './schemas'
 import {media} from 'sanity-plugin-media'
 import {codeInput} from '@sanity/code-input' // <-- 1. Importer le plugin
@@ -16,7 +17,9 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
-    structureTool(),
+    structureTool({
+      structure: myStructure // <-- On passe la structure personnalisée ici
+    }),
     media(),
     codeInput(),
   ],
